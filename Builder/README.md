@@ -53,13 +53,13 @@ var bed = builder.MakeFrame().MakeMattress().MakePillow().Build();
 한 두개 정도는 괜찮을 수 있겠지만, 
 매개변수의 수가 늘어나게되면 걷잡을 수 없을정도가 된다.
 
-#### 핵심
+### 핵심
 - 생성자가 많고, 
 - 변경 불가능한 객체를 만들고 싶을 때!
     - setter를 사용했다면, 변경이 가능하다!
 
 
 
-- 레퍼런스
+## 레퍼런스
     - https://johngrib.github.io/wiki/builder-pattern/
     - https://devfunny.tistory.com/337
