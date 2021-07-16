@@ -2,7 +2,7 @@
 
 namespace Builder
 {
-    public interface IBedBuilder
+    interface IBedBuilder
     {
       void MakeFrame();
       void MakeMattress();
@@ -11,9 +11,36 @@ namespace Builder
       Bed Build();
     }
 
-    public class Simons : IBedBuilder
+    class Ace : IBedBuilder
     {
-      private Builder _bed = new Bed();
+      private Bed _bed = new Bed();
+      private int pillowSize = 1;
+      private string sheetName;
+      public Bed Build(){
+        _bed.Pillow = "Pillow size #" + pillowSize;
+        _bed.Sheet = "Sheet " + sheetName;
+        return _bed;
+      }
+
+      public void MakeFrame(){
+        _bed.Frame = (DateTime.Now.Month > 5 && DateTime.Now.Month < 9) ? "Ace Summer Frame" : "Ace Wood Frame";
+      }
+
+      public void MakeMattress(){
+        _bed.Mattress = "Ace Mattress";
+      }
+
+      public void MakePillow(int size){
+        pillowSize = size;
+      }
+
+      public void MakeSheet(string sheet){
+        sheetName = sheet;
+      }
+    }
+    class Simons : IBedBuilder
+    {
+      private Bed _bed = new Bed();
       private int pillowSize = 0;
       private string sheetName;
       public Bed Build(){
@@ -27,7 +54,7 @@ namespace Builder
       }
 
       public void MakeMattress(){
-        _bed.Mattresss = "Simons Mattress";
+        _bed.Mattress = "Simons Mattress";
       }
 
       public void MakePillow(int size){
@@ -39,14 +66,14 @@ namespace Builder
       }
     }
 
-    public class Bed
+    class Bed
     {
       public string Frame{get; set;}
-      public string Mattresss{get; set;}
+      public string Mattress{get; set;}
       public string Pillow{get; set;}
       public string Sheet{ get; set; }
       public override string ToString(){
-        return string.Format("{0} {1} {2} {3}", Frame, Mattresss, Pillow, Sheet);
+        return string.Format("{0} {1} {2} {3}", Frame, Mattress, Pillow, Sheet);
       }
     }
 
@@ -64,11 +91,27 @@ namespace Builder
 
     class Client
     {
-      void HowToTest(){
+      public static void HowToTest(){
         IBedBuilder builder = new Simons();
         var director = new Director();
         var bed = director.Construct(builder);
         Console.WriteLine(bed.ToString());
+        
+        IBedBuilder aceBuilder = new Ace();
+        var aceDirector = new Director();
+        var aceBed = director.Construct(aceBuilder);
+        Console.WriteLine(aceBed.ToString());
+
       }
     }
+
+  class MainClass
+  {
+    public static void Main(string[] args)
+    {
+      Client.HowToTest();
+
+    }
+  }
 }
+
