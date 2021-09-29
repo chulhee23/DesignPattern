@@ -39,7 +39,7 @@ namespace Adapter
             }
 
             var data = new byte[]{};
-            Adapter.Display(data);
+            hdmi.Display(data);
         }
     }
 }
