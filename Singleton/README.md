@@ -1,4 +1,4 @@
-# Singleton
+# Singleton 패턴
 일반적인 싱글톤을 사용하는 방법을 Program.cs 파일에 작성했다.
 문제는 이렇게 작성하면 thread-safe 하지 않다.
 
