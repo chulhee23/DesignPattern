@@ -1,6 +1,5 @@
 # 목차 
-
-- [Adapter 패턴](#Adapter 패턴) 
+[Adapter 패턴](#Adapter 패턴) 
 - [Builder 패턴](#Builder 패턴) 
 - [Composite 패턴](#Composite 패턴) 
 - [Factory 패턴](#Factory 패턴) 
