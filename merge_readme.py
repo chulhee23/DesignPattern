@@ -27,7 +27,6 @@ with open('README.md', 'w') as outfile:
     outfile.seek(0)
     outfile.write("# 목차 \n\n")
     
-    table_of_contents.sort()
     for readme_head in table_of_contents:
         outfile.write(f"- [{readme_head[2:]}](#{readme_head[2:]}) \n")
 
