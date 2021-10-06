@@ -6,7 +6,7 @@
 - [Singleton 패턴](#Singleton-패턴) 
 - [Builder 패턴](#Builder-패턴) 
 - [Factory 패턴](#Factory-패턴) 
-- [Strategy 패턴 (전략 패턴)](#Strategy-패턴-(전략-패턴)) 
+- [Strategy 패턴](#Strategy-패턴) 
 
 
 # Observer 패턴
@@ -209,7 +209,7 @@ var bed = builder.MakeFrame().MakeMattress().MakePillow().Build();
 # Factory 패턴
 
 
-# Strategy 패턴 (전략 패턴)
+# Strategy 패턴
 
 전략 패턴은 하나의 문제를 해결하기 위해 여러가지 알고리즘 방식들이 있을 대, 
 하나의 공통 인터페이스와 이를 구현하는 여러 알고리즘 클래스들을 구현하고, 
